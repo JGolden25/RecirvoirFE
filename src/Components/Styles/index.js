@@ -28,7 +28,7 @@ left: 0;
 `
 
 export const NotesMain = styled.main`
-margin-left: 31rem;
+margin-left: 32rem;
 `
 
 export const StyledHeader = styled.div`

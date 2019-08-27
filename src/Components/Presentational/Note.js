@@ -12,7 +12,14 @@ export const Note = props => {
                 <div 
                 style={{fontSize:!props.match.params.id ? props.fontSizeTest(props.note.textBody.length) : '16px'}} 
                 dangerouslySetInnerHTML={{__html: props.noteMarkdownConverter.makeHtml(props.note.recipetime + " ")}}></div>
+                <div 
+                style={{fontSize:!props.match.params.id ? props.fontSizeTest(props.note.textBody.length) : '16px'}} 
+                dangerouslySetInnerHTML={{__html: props.noteMarkdownConverter.makeHtml(props.note.ingredients + " ")}}></div>
+                <div 
+                style={{fontSize:!props.match.params.id ? props.fontSizeTest(props.note.textBody.length) : '16px'}} 
+                dangerouslySetInnerHTML={{__html: props.noteMarkdownConverter.makeHtml(props.note.steps + " ")}}></div>
             </div>
+            
             
         </Fragment>
     )

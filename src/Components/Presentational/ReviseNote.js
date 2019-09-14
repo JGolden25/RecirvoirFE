@@ -20,6 +20,16 @@ export const ReviseNote = props => {
             <textarea name="recipetime" onChange={e => props.handleInput(e)}>
             </textarea>
         </div> 
+        <div className="form-container">
+            <label>time</label>
+            <textarea name="ingredients" onChange={e => props.handleInput(e)}>
+            </textarea>
+        </div> 
+        <div className="form-container">
+            <label>time</label>
+            <textarea name="steps" onChange={e => props.handleInput(e)}>
+            </textarea>
+        </div> 
 
         <div className="button revise" onClick={e => {props.reviseNote(props.match.params.id, props.note); e.currentTarget.parentElement.reset(); props.history.push('/notes')}}>Update Note</div>
     </form>

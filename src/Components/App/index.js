@@ -13,7 +13,9 @@ class App extends Component {
     note: {
       title: '',
       textBody: '',
-      recipetime: ''
+      recipetime: '',
+      ingredients: '',
+      Steps: ''
     },
     sidebar: {
       sidebarSearch: ' '

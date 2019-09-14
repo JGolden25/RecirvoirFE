@@ -6,6 +6,8 @@ class NoteView extends React.Component {
         
         this.state = {title: this.props.note.title, textBody:this.props.note.textBody}
         this.state = {title: this.props.note.title, recipetime:this.props.note.recipetime}
+        this.state = {title: this.props.note.title, ingredients:this.props.note.ingredients}
+        this.state = {title: this.props.note.title, steps:this.props.note.steps}
     }
     
 
@@ -63,6 +65,20 @@ class NoteView extends React.Component {
                 disabled={this.props.match.params.id ? false : true} 
                 onChange={this.handleChange} 
                 defaultValue={this.state.recipetime}
+                ></textarea> 
+                <textarea
+                className = "ingredients" 
+                name="ingredients" 
+                disabled={this.props.match.params.id ? false : true} 
+                onChange={this.handleChange} 
+                defaultValue={this.state.ingredients}
+                ></textarea>
+                <textarea
+                className = "steps" 
+                name="steps" 
+                disabled={this.props.match.params.id ? false : true} 
+                onChange={this.handleChange} 
+                defaultValue={this.state.steps}
                 ></textarea> 
                 {this.props.match.params.id ? 
                     <div className="note-buttons">

@@ -10,7 +10,7 @@ export const ACTIONS = {
 export const collectNotes = () => dispatch => {
     console.log('Collect Notes');
     dispatch({type: ACTIONS.COLLECTING_NOTES});
-    axios.get('http://localhost:7777/api/notes/')
+    axios.get('https://hidden-bayou-18567.herokuapp.com/')
     .then(response => (dispatch({type: ACTIONS.NOTES_COLLECTED, notes: response.data})))
     .catch(err => console.log('Unable to Collect Notes: ' + err.message))
 }

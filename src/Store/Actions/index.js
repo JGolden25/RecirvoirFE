@@ -18,7 +18,7 @@ export const collectNotes = () => dispatch => {
 export const assembleNote = (note) => dispatch => {
     console.log('Assemble Note');
     dispatch({type: ACTIONS.ASSEMBLING_NOTE});
-    axios.post('http://localhost:7777/api/notes/', {...note})
+    axios.post('https://hidden-bayou-18567.herokuapp.com/', {...note})
     .then(response => (dispatch({type: ACTIONS.NOTE_ASSEMBLED, note: {_id: response.data, ...note}})))
     .catch(err => console.log('Unable to Assemble Note: ' + err.message))
 }
@@ -26,7 +26,7 @@ export const assembleNote = (note) => dispatch => {
 export const reviseNote = (noteId, note) => dispatch => {
     console.log('Revise Note');
     dispatch({type: ACTIONS.REVISING_NOTE});
-    axios.put(`http://localhost:7777/api/notes/${noteId}`, note)
+    axios.put(`https://hidden-bayou-18567.herokuapp.com/${noteId}`, note)
     .then(response => (dispatch({type: ACTIONS.NOTE_REVISED, note: response.data, noteId: noteId})))
     .catch(err => console.log('Unable to Revise Note: ' + err.message))
 }
@@ -34,7 +34,7 @@ export const reviseNote = (noteId, note) => dispatch => {
 export const expungeNote = noteId => dispatch => {
     console.log('Expunge Note');
     dispatch({type: ACTIONS.EXPUNGING_NOTE});
-    axios.delete(`http://localhost:7777/api/notes/${noteId}`)
+    axios.delete(`https://hidden-bayou-18567.herokuapp.com/${noteId}`)
     .then(() => (dispatch({type: ACTIONS.NOTE_EXPUNGED, noteId: noteId})))
     .catch(err => console.log('Unable to Delete Note: ' + err.message))
 }
